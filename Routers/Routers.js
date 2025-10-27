@@ -5,8 +5,8 @@ import { blockAdminCreation } from '../Middleware/blockAdminCreation.js';
 
 const userRouter = express.Router();
 
-userRouter.post('/signUp',protect,blockAdminCreation,signUp);
-userRouter.post('/login',protect,login);
+userRouter.post('/signUp',blockAdminCreation,signUp);
+userRouter.post('/login',login);
 userRouter.post("/forget-password/request-otp", reqestOTP);
 userRouter.post("/forget-password/reset", resetPassword);
 

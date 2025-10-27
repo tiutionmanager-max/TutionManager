@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import userRouter from './Routers/Routers.js';
 import studentsRouter from './Routers/studentsRouter.js';
+import superAdminRouter from "./Routers/superAdminRoutes.js";
 
 
 
@@ -31,6 +32,7 @@ const connectDB = async ()=> {
 
 app.use('/api/users', userRouter);
 app.use('/api/students', studentsRouter);
+app.use("/api/superadmin", superAdminRouter);
 
 app.get("/", (req, res) => {
   res.send("API is running...");

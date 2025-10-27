@@ -71,11 +71,14 @@ export const login = async (req,res)=>{
                 { expiresIn: "7d" } // token valid for 7 days
                 );
             res.status(200).json({
-                _id: user._id,
-                name: user.name,
-                email: user.email,
-                role: user.role,
                 token,
+                user: {
+                        id: user._id,
+                        name: user.name,
+                        email: user.email,
+                        role: user.role,
+                    },
+                
                 });
         }
 
